@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row" style="margin: auto">
+    <img src="/assets/img/emblem.jpg" class="emblem" alt="ФСО России">
+      <h1>Федеральная служба охраны Российской Федерации</h1>
+      <h2>Оперативное управление</h2>
+      <h2>ПС "Сатурн"</h2>
+  </div>
+  <div class="row">
+    <div id="range1">
+      <div class="outer">
+        <div class="middle">
+          <div class="inner">
+            <div class="login-wr">
+              <h2>Вход</h2>
+              <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
+                <mat-form-field appearance="outline">
+                  <mat-label>Введите логин</mat-label>
+                  <input formControlName="userName" matInput placeholder="Логин">
+                  <mat-error *ngIf="loginForm.get('userName')?.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Введите пароль</mat-label>
+                  <input type="password" formControlName="password" matInput>
+                  <mat-error *ngIf="loginForm.get('password')?.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.get('userName')?.invalid || loginForm.get('password')?.invalid">Войти</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  <div class="footer">
+    <h1>При возникновении вопросов обращаться по телефону АТС-9: 959-23, ПТС: 527-18.</h1>
+  </div>
+</div>
+

@@ -1,0 +1,26 @@
+<div class="top-menu">
+  <nav>
+    <ul>
+      <li>
+        <img src="/assets/img/fso_mini.svg" style="width: 40px; height: 47px; " alt="ФСО России">
+      </li>
+      <li>
+        <a [routerLink]="['me']">Профиль</a>
+      </li>
+      <li>
+        <a [routerLink]="['search']">Поиск лица</a>
+      </li>
+      <li *ngIf="username === 'admin'">
+        <a [routerLink]="['users']">Пользователи</a>
+      </li>
+      <li>
+        <form>
+          <label style="margin-right: 5px; color: firebrick">Привет, {{ username }}!</label>
+          <button type="button" mat-raised-button color="primary" (click)="logout()">Выйти</button>
+        </form>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+

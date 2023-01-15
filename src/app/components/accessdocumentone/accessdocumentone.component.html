@@ -1,0 +1,47 @@
+<div *ngIf="loading; else showInfo">
+  <mat-spinner style="margin: auto"></mat-spinner>
+</div>
+<ng-template #showInfo>
+  <div *ngIf="accessDocument !== null">
+    <h1 class="accessDocumentTitle">Заявка № {{ accessDocument.subscriptionNumber }} от {{ accessDocument.subscriptionDate }}</h1>
+    <h2 class="accessDocumentTitle">Организация: {{ accessDocument.companyName }} </h2>
+    <h2 class="accessDocumentTitle">Подразделение-заказчик: {{ accessDocument.departmentName }}</h2>
+    <h2 class="accessDocumentTitle">Перечень объектов для допуска:</h2>
+    <div *ngFor="let object of accessObjects">
+      <h3 class="accessDocumentTitle">{{ object.name }}</h3>
+    </div>
+    <div style="margin-left: 5%; margin-right: 5%; padding-bottom: 20px">
+      <div style="display: inline">
+        <button style="border: 1px solid black" mat-button [matMenuTriggerFor]="downloadMenu">Скачать</button>
+        <mat-menu #downloadMenu>
+          <menu mat-menu-item (click)="downloadPDF()">Скачать в .pdf</menu>
+          <menu mat-menu-item (click)="downloadExcel()">Скачать в .xlsx</menu>
+          <menu mat-menu-item (click)="downloadExcelWithPassports()">Скачать в .xlsx [с паспортами]</menu>
+        </mat-menu>
+        <label style="right: 10px">Всего допущено: {{ accepted }}</label>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+        <th>№ п/п</th>
+        <th>ФИО</th>
+        <th>Дата рождения</th>
+        <th>Паспорт</th>
+        <th>Место рождения</th>
+        <th>Отметка о допуске</th>
+        </thead>
+        <tbody>
+        <tr appStyle color="black" [dStyles]="{ border: '2px solid blue', fontWeight: 'bold', borderRadius: '7px'}" *ngFor="let person of people; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ person.name }}</td>
+          <td>{{ person.birthday }}</td>
+          <td *ngIf="person.passport !== null">{{ person.passport }}</td>
+          <td *ngIf="person.foreignPassport !== null">{{ person.foreignPassport }}</td>
+          <td>{{ person.birthName }}</td>
+          <td [class]="person.reasonResult === '+' ? 'accepted' : 'notAccepted'" style="font-size: xx-large">{{ person.reasonResult }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div *ngIf="accessDocument === null">Нет такого документа</div>
+</ng-template>

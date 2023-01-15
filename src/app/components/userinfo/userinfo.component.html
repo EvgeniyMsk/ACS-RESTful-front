@@ -1,0 +1,17 @@
+<div style="padding-bottom: 20px" *ngIf="user != null">
+  <h1 class="accessDocumentTitle">Профиль пользователя {{ user.username }}</h1>
+  <table class="table">
+    <thead>
+    <th>Логин</th>
+    <th>Пароль</th>
+    <th>Мои объекты</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{ user.username }}</td>
+      <td>{{ user.password }}</td>
+      <td><p *ngFor="let object of myAccessObjects">{{ object.name }}</p></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

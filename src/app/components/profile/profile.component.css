@@ -1,0 +1,11 @@
+.container {
+  width: 70%;
+  margin: auto;
+}
+
+.footer {
+  width: 70%;
+  margin: auto;
+  background-color: #c6c8ca;
+  text-align: center;
+}

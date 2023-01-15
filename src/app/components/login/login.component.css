@@ -1,0 +1,116 @@
+div {
+  display: block;
+}
+
+body {
+  background: #e8eaf5;
+}
+
+mat-form-field {
+  width: 300px;
+}
+
+button {
+  width: 300px;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background:#354d7c
+}
+
+.container {
+  margin: 0 auto;
+}
+
+
+.row {
+  text-align: center;
+}
+
+h1, h2 {
+  color: #c6c8ca;
+}
+
+.emblem {
+  width: 10%;
+  height: 15%;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.footer {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.outer {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.inner {
+  text-align: center;
+  width: auto;
+  padding: 0 15px;
+}
+
+#range1 {
+  height: 100%;
+  min-height: 200px;
+}
+
+#range1 .login-wr {
+  position: relative;
+  margin: 0 auto;
+  background: #ecf0f1;
+  max-width: 350px;
+  border-radius: 5px;
+  border-top: 4px solid #e74c3c;
+  box-shadow: 3px 3px 10px #333;
+  padding: 15px;
+}
+
+#range1 h2 {
+  text-align: center;
+  font-weight: 200;
+  font-size: 2em;
+  margin-top: 10px;
+  color: #34495e;
+}
+
+#range1 .form {
+  padding-top: 20px;
+  text-align: center;
+}
+
+#range1 button {
+  width: 80%;
+  margin-bottom: 25px;
+  height: 40px;
+  border-radius: 5px;
+  outline: 0;
+  -moz-outline-style: none;
+}
+
+#range1 a {
+  text-align: center;
+  font-size: 12px;
+  color: #3498db;
+}
+
+#range1 button {
+  border:none;
+  color: white;
+  font-size: 18px;
+  font-weight: 200;
+  cursor: pointer;
+  transition: box-shadow .4s ease;
+}
